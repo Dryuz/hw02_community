@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Group, Post
 
+
 def index(request):
     posts = Post.objects.select_related('author')[:10]
     template = 'posts/index.html'
